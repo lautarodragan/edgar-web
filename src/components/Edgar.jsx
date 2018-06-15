@@ -11,7 +11,7 @@ export class Edgar extends React.Component {
     this.state = {
       players: [],
     }
-    fetch('http://edgar-hodlers.herokuapp.com/').then(this.onFetchResponse)
+    fetch('https://edgar-hodlers.herokuapp.com/').then(this.onFetchResponse)
   }
 
   render() {
