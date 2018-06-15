@@ -18,7 +18,7 @@ export class Edgar extends React.Component {
     return (
       <main>
         <header>
-          <h1>Edgar</h1>
+          <h1>Number of addresses holding POE</h1>
         </header>
         <LineChart
           width={1000}
