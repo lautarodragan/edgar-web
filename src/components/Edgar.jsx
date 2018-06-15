@@ -26,13 +26,11 @@ export class Edgar extends React.Component {
           data={this.state.data}
           margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
         >
-          <XAxis dataKey="date" />
+          <XAxis dataKey="dateLabel" />
           <YAxis domain={['auto']}  />
-          <Tooltip />
+          {/*<Tooltip />*/}
           <CartesianGrid stroke="#f5f5f5" />
-          <Line dataKey="holders" stroke="#ff7300" yAxisId={0} >
-            <LabelList position="bottom" offset={10} dataKey="dateLabel" />
-          </Line>
+          <Line dataKey="holders" stroke="#ff7300"  />
         </LineChart>
 
       </main>
@@ -47,13 +45,26 @@ export class Edgar extends React.Component {
       date1.getMonth() === date2.getMonth() &&
       date1.getYear() === date2.getYear()
 
+    const dateToLabel = date => date.toLocaleDateString('en-us', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })
+
+    const mapper = ({date, holders}) => ({
+      holders,
+      date: new Date(date),
+      dateLabel: dateToLabel(new Date(date))
+    })
+
     const reducer = (accumulator, current) =>
       accumulator.some(({ date }) => dateEqualsUpToDay(current.date, date))
         ? accumulator
         : [ ...accumulator, current ]
 
     const data = raw
-      .map(({date, holders}) => ({date: new Date(date), holders, dateLabel: date}))
+      .map(mapper)
       .reduce(reducer, [])
 
     this.setState({
