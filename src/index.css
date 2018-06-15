@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Delius|Nanum+Pen+Script|Nothing+You+Could+Do');
+
+* {
+    font-family: 'Nothing You Could Do', cursive;
+}
+
+html {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+body, .react-root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+}

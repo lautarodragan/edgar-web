@@ -1,0 +1,31 @@
+header {
+    text-align: center;
+}
+
+main img {
+    width: 40px;
+    vertical-align: middle;
+}
+
+.owned-items {
+    display: flex;
+    align-items: center;
+}
+
+.owned-item-count {
+    display: inline-block;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 4px;
+    margin-right: 4px;
+    font-weight: bold;
+    padding-right: 10px;
+    font-size: 19px;
+}
+
+p {
+    width: 700px;
+    margin: 0;
+    padding: 0;
+}
+
