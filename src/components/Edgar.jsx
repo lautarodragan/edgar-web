@@ -41,7 +41,7 @@ export class Edgar extends React.Component {
     const raw = await result.json()
 
     const dateEqualsUpToDay = (date1, date2) =>
-      date1.getDay() === date2.getDay() &&
+      date1.getDate() === date2.getDate() &&
       date1.getMonth() === date2.getMonth() &&
       date1.getYear() === date2.getYear()
 
